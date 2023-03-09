@@ -1,0 +1,145 @@
+
+/* Style General */
+
+body {
+    background: #192058;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0px;
+  border: 0px;
+}
+
+
+  /* Style NavBar */
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+.nav-link {
+   margin: 0 10px; /* ajusta el margen horizontal de los enlaces */
+   display: flex;
+   align-items: center;
+ }
+
+.logo{
+  width: 100px;
+}
+.link{
+  font-family: 'Poppins';
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+}
+.nav-link {
+  line-height: 1;
+  padding: 15px 10px;
+}
+ul.right {
+  margin-bottom: 20px;
+}
+.nav-link:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #ff00f2; /* cambiar el color según el color deseado */
+}
+.sidenav-trigger {
+  color: #ffffff;
+} 
+.nav-item{
+  margin-top: 15px;
+}
+.navbar-mi-color {
+  height: 80px;
+  background-color: #1A1D37;
+}
+.nav-wrapper{
+  justify-content: center;
+  justify-items: center;
+  margin-top: 8px;
+}
+  /* Style inicio */
+
+.home{
+    margin-top: 2REM;
+}
+  /* Style foonter */
+footer {
+  bottom: 0;
+}  
+.footer-years{
+  font-family: 'poppins';
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin-top: 10px;
+}
+.color-created{
+  background-color:#7C7BBC;
+}
+.footer-color{
+  height: 160px;
+}
+
+  /* Style consejos */
+
+       
+  .special-line {
+    width: 100%;
+    margin-left: auto;
+    border-top: 4px solid #FB00FF;
+    box-shadow: none;
+
+  }
+.title-consejos{
+ color: #9CFF63;
+ font-family: 'poppins';
+font-style: normal;
+font-size: 26px;
+}
+
+.container-consejos{
+  padding: 20px;
+}
+  /* Style media */
+  
+  @media only screen and (max-width : 992px) {
+
+  }
+@media only screen and (max-width: 768px) {
+  .center-mobile {
+    text-align: center;
+  }
+  .footer-color{
+    height: 100%;
+   
+  }
+ .vertical-line {
+      height: 20px;
+    }
+
+}  
+  @media only screen and (max-width : 600px) {
+   
+
+  }
+  @media only screen and (max-width : 500px) {
+
+  }
+  @media only screen and (max-width : 370px) {
+ 
+  }
+
+  #consejos-locales-container {
+    display: none;
+  }
+  
+  #consejos-locales-container.mostrar {
+    display: block;
+  }

@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import Consejos
 
-# Create your views here.
-
 def home(request):
     consejos = Consejos.objects.all()
     return render(request, 'home.html', {'consejos': consejos})
