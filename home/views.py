@@ -11,7 +11,6 @@ def consejos_locales_curul(request):
     consejos = Consejos.objects.filter(type_consejo='Curul')
     return render(request, 'consejos_locales.html', {'consejos': consejos})
 
-
 def consejos_locales(request):
     consejos = Consejos.objects.filter(type_consejo='Local')
     context = {'consejos': consejos}
