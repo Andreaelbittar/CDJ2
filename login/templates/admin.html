@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content%}
+<section>
+
+    <div class="news_container">
+        <div>
+            <h2>Noticias</h2>
+        </div>
+        <div class="news_button_container">
+            <button class="news_add_button" id="add_post">
+                <h2>Agregar</h2>
+                <img src="{% static 'images/add.svg' %}" alt="Add Icon">
+            </button>
+        </div>
+
+        <div class="news_admin">
+            <div class="news_card">
+                {% for post in posts%}
+                {{post.title}}
+                {% endfor%}
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

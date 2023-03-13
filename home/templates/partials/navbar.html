@@ -12,6 +12,7 @@
         <li><a class="link nav-link white-text" href="#inicio">Example</a></li>
         <li><a class="link nav-link white-text" href="#sobremi">Example</a></li>
         <li><a class="link nav-link white-text" href="#proyectos">Example</a></li>
+        <li><a class="link nav-link white-text" href="{% url 'login:news' %}">Noticias</a></li>
         <li><a class="link nav-link white-text dropdown-trigger dropdown-below" href="#" data-target="dropdown1">Consejos Locales</a>
           <ul id="dropdown1" class="dropdown-content aligned">
             {% for consejo in consejos %}
