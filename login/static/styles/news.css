@@ -1,0 +1,25 @@
+.news_add_button{
+    display: flex;
+    gap: 5px;
+    background: white;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.news_add_button h2{
+    font-size: 18px;
+    margin: 0;
+}
+
+.news_container{
+    margin: 3rem 0;
+}
+
+.news_button_container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+  
