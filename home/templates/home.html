@@ -3,34 +3,54 @@
 
 {% block content %}
 
-<!Container home inicio>
-<div class="container-fluid home">
+<!--Container home inicio-->
+<div class="container">
+
+<div class="container-consejos justify-content-center">
     <div class="row">
-        <img src="static/images/TW-10.png" class="parallax">
+        <img src="{% static 'images/TW-10.png' %}" class="parallax">
     </div>
 </div>
-<!Container buscador>
+</div>
+
+<!--Container buscador-->
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos" >CONSEJOS LOCALES</h2>
+      <h2 class="title-consejos">Consejos locales</h2>
       <hr class="special-line">
     </div>
   </div>
 </div>
 
+<div class="container">
+  
+  <div class="container wrap ">
+    <div class="input-group">
+      <input type="text" id="search-box" class="searchTerm" placeholder="Busca el consejo de tu localidad">
+      <div class="input-group-append">
+        <span class="input-group-text"><i class="fa fa-search"></i></span>
+      </div>
+    </div>
+  </div>
 
-<!-- formulario de búsqueda -->
+    <div class="carousel"  id="search-results">
+    </div>
+</div>
 
-<!Container consejos>
+  
+
+<!--Container consejos-->
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos" >NUESTRAS 8 CURULES ESPECIALES</h2>
+      <h2 class="title-consejos" >Nuestras 8 cureles especiales</h2>
       <hr class="special-line">
     </div>
   </div>
 </div>
+<div class="container">
+  
 
 <div class="container-consejos justify-content-center ">
   <div class="row mx-auto mb-4" >
@@ -45,8 +65,7 @@
           <span class="card-title black-text text-darken-4">{{ consejo.name }} </span>
         </div>
         <div class="card-reveal">
-          <span class="card-title brown-text text-darken-2">{{ consejo.name }}<i class="material-icons right">close</i></span>
-          <p class="text-icons">{{ consejo.type_consejo }}</p>
+          <span class="card-title text-icons">{{ consejo.type_consejo }}<i class="material-icons right">close</i></span>
           <p class="text-icons">{{ consejo.email }}</p>
           <p class="text-icons">{{ consejo.description }}</p>
           <li><a class="blue-text" href="#sabersobre-1">Saber mas</a></li>
@@ -57,61 +76,18 @@
     {% endfor %}
   </div>
 </div>
+</div>
+
+<br>
 
 <!Container eventos y noticias>
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos">EVENTOS Y NOTICIAS</h2>
+      <h2 class="title-consejos">Eventos y noticias</h2>
       <hr class="special-line">
     </div>
   </div>
 </div>
-<!Container footer>
-<footer class="black text-light d-flex align-items-center py-4">
-  <div class="container-fluid footer-color">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-3 col-sm-12 text-center mb-4">
-        <img src="static/images/logo.png" alt="logo" class="logo mx-auto">
-      </div>
-      <div class="col-md-8 col-sm-12">
-        <div class="row justify-content-center">
-          <div class="col-md-4 col-sm-12 mb-4 center-mobile">
-            <h5>Información de Contacto</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-map-marker-alt"></i> Dirección de la empresa</li>
-              <li><i class="fas fa-phone"></i> Teléfono de contacto</li>
-              <li><i class="fas fa-envelope"></i> Correo electrónico</li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-12 mb-4 center-mobile">
-            <h5>Menú de navegación</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Inicio</a></li>
-              <li><a href="#">Servicios</a></li>
-              <li><a href="#">Productos</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-12 mb-4 center-mobile">
-            <h5>Redes Sociales</h5>
-            <ul class="list-unstyled">
-              <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-12 color-created">
-    <div class="text-center black-text">
-      <p class="footer-years">© 2023 Todos los derechos reservados.</p>
-    </div>
-  </div>
-</footer>
-  
+
 {% endblock %}
