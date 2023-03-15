@@ -4,10 +4,10 @@ let allCards = [];
 
 function createCard(result) {
   const card = `
-    <div class="card-container" style="height: 100%;">
-      <div class="card hoverable card-item">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="${result.logo}" alt="${result.name} logo" style="object-fit: cover;">
+    <div class="container justify-content-center " style="height: 100%;">
+      <div class="card hoverable  white card-item">
+        <div class="card-image  waves-effect waves-block waves-light" style=max-width="100%">
+          <img class="activator" src="${result.logo}" alt="${result.name} logo" max-width="100%" height="250px">
         </div>
         <div class="card-reveal">
           <span class="card-title brown-text text-darken-2">${result.name}<i class="material-icons activator right">close</i></span>
@@ -27,14 +27,34 @@ function createCard(result) {
 
 // Función para buscar las cartas
 function searchCards(query) {
-  if (query === '') {
-    showSearchResults(allCards);
-  } else {
-    const filteredCards = allCards.filter(card => {
-      return card.name.toLowerCase().includes(query.toLowerCase());
-    });
-    showSearchResults(filteredCards);
-  }
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    if (query === '') {
+      showSearchResults(allCards);
+    } else {
+      const filteredCards = allCards.filter(card => {
+        return card.name.toLowerCase().includes(query.toLowerCase());
+      });
+      showSearchResults(filteredCards);
+    }
+  }, 500);
+}
+
+
+let timeoutId;
+
+function searchCards(query) {
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    if (query === '') {
+      showSearchResults(allCards);
+    } else {
+      const filteredCards = allCards.filter(card => {
+        return card.name.toLowerCase().includes(query.toLowerCase());
+      });
+      showSearchResults(filteredCards);
+    }
+  }, 500); 
 }
 
 // Carga todas las cartas al iniciar la página

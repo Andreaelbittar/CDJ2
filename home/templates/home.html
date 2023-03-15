@@ -11,34 +11,24 @@
         <img src="{% static 'images/TW-10.png' %}" class="parallax">
     </div>
 </div>
-</div>
 
 <!--Container buscador-->
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="title-consejos">Consejos locales</h2>
-      <hr class="special-line">
+        <h2 class="title-consejos">Consejos locales</h2>
+        <hr class="special-line">
     </div>
-  </div>
-</div>
-
-<div class="container">
+  </div>  
   
-  <div class="container wrap ">
+  <div class="search container wrap ">
     <div class="input-group">
       <input type="text" id="search-box" class="searchTerm" placeholder="Busca el consejo de tu localidad">
-      <div class="input-group-append">
-        <span class="input-group-text"><i class="fa fa-search"></i></span>
-      </div>
     </div>
   </div>
-
     <div class="carousel"  id="search-results">
     </div>
 </div>
-
-  
 
 <!--Container consejos-->
 <div class="container">
@@ -48,34 +38,30 @@
       <hr class="special-line">
     </div>
   </div>
-</div>
-<div class="container">
-  
-
-<div class="container-consejos justify-content-center ">
-  <div class="row mx-auto mb-4" >
-    {% for consejo in consejos %}
-    {% if consejo.type_consejo == 'Curul' %}
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3">
-      <div class="card hoverable white ">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator " src="{{ consejo.logo.url }}" alt="{{ consejo.name }} logo">
-        </div>
-        <div class="card-content">
-          <span class="card-title black-text text-darken-4">{{ consejo.name }} </span>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title text-icons">{{ consejo.type_consejo }}<i class="material-icons right">close</i></span>
-          <p class="text-icons">{{ consejo.email }}</p>
-          <p class="text-icons">{{ consejo.description }}</p>
-          <li><a class="blue-text" href="#sabersobre-1">Saber mas</a></li>
+  <div class="justify-content-center ">
+    <div class="row mx-auto mb-4" >
+      {% for consejo in consejos %}
+      {% if consejo.type_consejo == 'Curul' %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-3">
+        <div class="card hoverable white" >
+          <div class="card-image waves-effect waves-block waves-light" style=max-width="100%">
+            <img class="activator" src="{{ consejo.logo.url }}" alt="{{ consejo.name }} logo" max-width="100%" height="250px">
+          </div>
+          <div class="card-content">
+            <span class="card-title black-text text-darken-4">{{ consejo.name }} </span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title text-icons">{{ consejo.type_consejo }}<i class="material-icons right">close</i></span>
+            <p class="text-icons">{{ consejo.email }}</p>
+            <p class="text-icons">{{ consejo.description }}</p>
+            <li><a class="blue-text" href="#sabersobre-1">Saber mas</a></li>
+          </div>
         </div>
       </div>
+      {% endif %}
+      {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
   </div>
-</div>
 </div>
 
 <br>

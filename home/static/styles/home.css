@@ -42,8 +42,10 @@ body {
 .container-consejos{
   padding: 20px;
 }
-  /* Style media */
+
+/* Style media */
   
+
 @media only screen and (max-width : 992px) {
 
 }
