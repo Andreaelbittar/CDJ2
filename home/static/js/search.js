@@ -79,7 +79,7 @@ function showSearchResults(results) {
   // Configura el carrusel 
   slickCarousel = $('.carousel').slick({
     autoplay: true,
-    autoplaySpeed: 4000, 
+    autoplaySpeed: 2000, 
     slidesToShow: 4,
     slidesToScroll: 4,
     responsive: [

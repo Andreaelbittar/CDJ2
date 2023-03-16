@@ -14,13 +14,12 @@ input[type=search]:valid {
   color: white;
 }
 
-   /* Style seacrh carrusel */
+/* Style seacrh carrusel */
 
-  .carousel .item {
-    margin: 10px;
-  }
+.carousel .item {
+  margin: 10px;
+}
  
-
 .carousel{
   height: 100%;}
 
