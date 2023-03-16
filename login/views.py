@@ -1,17 +1,33 @@
-from django.shortcuts import render, redirect
-from .forms import PostForm
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import Post
+from .forms import PostForm
 
-def news(request):
+def panel_admin(request):
+    posts = Post.objects.all() 
+    context = {'posts':posts}
+    return render(request, 'panel_admin.html', context)
+
+def create_post(request):
+    form = PostForm()
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            form = PostForm()
-            return redirect('news')
-    else:
-        form = PostForm()
+            return redirect('login:panel_admin')
+        
+    context={'form':form}
+    return render(request, 'post_form.html', context)
 
-    posts = Post.objects.all()
-    context = {'posts': posts, 'form': form}
-    return render(request, 'admin.html', context)
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    if request.method == "POST":
+        post.delete()
+        return redirect("login:panel_admin")
+    
+
+
+
+
+
+    
+
