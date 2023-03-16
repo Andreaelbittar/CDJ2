@@ -102,6 +102,8 @@ function showSearchResults(results) {
     autoplaySpeed: 4000, 
     slidesToShow: 4,
     slidesToScroll: 4,
+    prevArrow: '<button type="button" class="slick-prev"><i class="material-icons">arrow_back</i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="material-icons">arrow_forward</i></button>',
     responsive: [
       {
         breakpoint: 1024,
@@ -120,13 +122,12 @@ function showSearchResults(results) {
       {
         breakpoint: 400,
         settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
       }
-    }
-  ]
-});
-
-
+    ]
+  });
+  
 
 }

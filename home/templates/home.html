@@ -20,14 +20,22 @@
         <hr class="special-line">
     </div>
   </div>  
-  
-  <div class="search container wrap ">
-    <div class="input-group">
-      <input type="text" id="search-box" class="searchTerm" placeholder="Busca el consejo de tu localidad">
+
+  <div class="mt-4">
+    <div class="input-group rounded">
+      <input type="search"  id="search-box" class="searchTerm form-control rounded" placeholder="Busca el consejo de tu localidad" aria-label="Search" aria-describedby="search-addon">
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
     </div>
   </div>
+  
+  
+    <button type="button" class="slick-prev"><i class="material-icons">arrow_back</i></button>
     <div class="carousel"  id="search-results">
     </div>
+    <button type="button" class="slick-next"><i class="material-icons">arrow_forward</i></button>
+
 </div>
 
 <!--Container consejos-->

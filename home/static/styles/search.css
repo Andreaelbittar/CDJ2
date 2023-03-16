@@ -1,39 +1,26 @@
-.search {
-    width: 100%;
-    display: flex;
-  }
-  
-  .searchTerm:focus{
-    color: #ffffff;
-  }
-  
-  
-  
-  .wrap{
-    width: 24%;
-  }
-  @media (max-width: 576px) {
-    .wrap{
-      width: 55%;
-    }
-  }
-    @media (max-width: 375px) {
-      .wrap{
-        width: 70%;
-      }
-  
-    }
+.input-group-text {
+  background-color: #565ece;
+  border-color: #565ece;
+}
 
-   /* Style carrusel */
+.form-control:focus {
+  box-shadow: none;
+}
+
+.searchTerm::placeholder {
+  color: white;
+}
+input[type=search]:valid {
+  color: white;
+}
+
+   /* Style seacrh carrusel */
 
   .carousel .item {
     margin: 10px;
   }
  
 
-  .card-container {
-    height: 400px;
-  }
 .carousel{
   height: 100%;}
 
