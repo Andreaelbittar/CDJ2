@@ -1,21 +1,82 @@
 {% extends 'layout.html'%}
 
+{% load static %}
 {% block content %}
 
-<h2>HOLA</h2>
+<section class="news_container">
 
-<a href="{% url 'login:create_post'%}"> Agregar </a>
+    <div class="post_button">
+        <h2> Noticias </h2>
+        <a href="{% url 'login:create_post'%}">
+            Agregar
+            <img src="{% static 'images/add.svg' %}" alt="Add Icon">
+        </a>
+    </div>
 
-{% for post in posts %}
+    <div class="post_flex">
+        {% for post in posts %}
+        <div class="post_container">
+            <div class="post_card">
+                <h2> {{ post.title }} </h2>
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                <p> {{ post.text | safe}}</p>
+            </div>
+            <div class="post_options">
+                <a href="{% url 'login:delete_post' post.id %}"> Eliminar</a>
+                <a href="{% url 'login:update_post' post.id %}"> Actualizar </a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</section>
+
+<section>
+
+    <div class="document_button">
+        <h2>Documentos</h2>
+        <a href="{% url 'login:create_document' %}">
+            Agregar
+            <img src="{% static 'images/add.svg' %}" alt="Add ICON">
+        </a>
+    </div>
+
+    <div class="document_flex">
+
+        {% for document in documents %}
+        <div class="document_card">
+            
+            <h2>{{document.title}}</h2>
+            <p> {{document.description | safe }}</p>
+            <p>{{document.date}}</p>
+            <a href="{{ document.pdf.url }}" target="_blank"> Ver documento </a>
+
+            {% with document.pdf.name as file_name %}
+            {% with file_name|slice:'-4:' as extension %}
+
+            {% if extension == 'docx' or extension == '.odt' %}
+            <img src="{% static 'images/doc.png' %}" alt="Docx Icon" class="extension_icon">
+            {% elif extension == '.pdf' %}
+            <img src="{% static 'images/pdf.png' %}" alt="PDF icon" class="extension_icon">
+            {% elif extension == 'xlsx' %}
+            <img src="{% static 'images/xls.png' %}" alt="Xlsx Icon" class="extension_icon">
+            {% else %}
+            <img src="{% static 'images/landing.png' %}" alt="Default Icon" class="extension_icon">
+
+            {% endif %}
+            {% endwith %}
+            {% endwith %}
+           
+        </div>
+        {% endfor %}
+
+    </div>
 
 
 
-<h2> {{ post.title }} </h2>
-<img src="{{ post.image.url }}" alt="{{ post.title }}">
-<p> {{ post.text }}</p>
-
-<a href="{% url 'login:delete_post' post.id %}"> Eliminar</a>
-
-{% endfor %}
+</section>
 
 {% endblock %}

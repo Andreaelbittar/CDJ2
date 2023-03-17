@@ -2,11 +2,37 @@
 
 {% block content %}
 
-<form method="POST" enctype="multipart/form-data">
+
+<!-- Creación de Post  -->
+{% if type_form == 1%}
+<form method="POST" enctype="multipart/form-data" class="form">
     {% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Publicar</button>
+
+    {% if update == 1 %}
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+
+    {% else %}
+    <button type="submit" class="btn btn-primary">Crear</button>
+    {% endif %}
 </form>
+{% endif %}
+
+<!---->
+
+
+<!-- Creación de Documentos -->
+{% if type_form == 2%}
+
+<form method="POST" enctype="multipart/form-data" class="form">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>
+
+{% endif %}
+
+<!---->
 
 {% endblock %}
