@@ -4,7 +4,7 @@
 <div class="navbar-fixed">
   <nav class="navbar-mi-color" role="navigation">
     <div class="container">
-      <a id="logo-container" href="#inicio" class="brand-logo">
+      <a id="logo-container" href="/" class="brand-logo">
         <img class="logo" src="{% static 'images/logo.png' %}">
       </a>
       <a style="text-decoration: none;" href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -12,7 +12,7 @@
         <li><a class="link nav-link white-text" href="#inicio">Example</a></li>
         <li><a class="link nav-link white-text" href="#sobremi">Example</a></li>
         <li><a class="link nav-link white-text" href="#proyectos">Example</a></li>
-        <li><a class="link nav-link white-text" href="{% url 'login:news' %}">Noticias</a></li>
+        <li><a class="link nav-link white-text" href="{% url 'login:panel_admin' %}">Noticias</a></li>
         <li><a class="link nav-link white-text dropdown-trigger dropdown-below" href="#" data-target="dropdown1">Consejos Locales</a>
           <ul id="dropdown1" class="dropdown-content aligned">
             {% for consejo in consejos %}
