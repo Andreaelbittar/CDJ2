@@ -25,3 +25,23 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+.document_options a:first-child{
+    background: red;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    margin: 2rem 0 0;
+}
+
+.document_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.files_container{
+    margin: 3rem 0;
+}
